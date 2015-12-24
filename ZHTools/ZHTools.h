@@ -17,6 +17,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import "UIView+ZHFrame.h"
 @interface ZHTools : NSObject
 /*!
  *  从GIF里面获取里面的图片组
@@ -101,3 +102,6 @@ Method m1=class_getInstanceMethod([self class], NSSelectorFromString(methodName1
 Method m2=class_getInstanceMethod([self class], NSSelectorFromString(methodName2));\
 method_exchangeImplementations(m1, m2);\
 }
+
+#define ZHScreenWidth [UIScreen mainScreen].bounds.size.width //屏幕的宽度
+#define ZHScreenHeight [UIScreen mainScreen].bounds.size.width//屏幕的高度
