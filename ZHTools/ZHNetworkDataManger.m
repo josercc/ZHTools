@@ -63,13 +63,13 @@ typedef void(^ZHNSTimerComplete)(void);
 }
 -(void)runloopSearchDataNetworkStatusComplete:(SearchDataTypeDidComplete)complete{
     [RunloopBlocksSets addObject:complete];
-    KWeakSelf;
     _checkNetworkSuccess=YES;
     _isFirst=YES;
-    ZHNetworkTimer=[NSTimer scheduledTimerWithTimeInterval:ZHNetworkTimerCount block:^{
-        [weakSelf searchNetworkDataStatus];
-    } repeats:YES];
+    ZHNetworkTimer=[NSTimer scheduledTimerWithTimeInterval:ZHNetworkTimerCount target:self selector:@selector(runloopSearch) userInfo:nil repeats:YES];
     
+}
+-(void)runloopSearch{
+    [self searchNetworkDataStatus];
 }
 -(void)stopRunloop{
     [ZHNetworkTimer invalidate];
