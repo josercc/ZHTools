@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "ZHTools"
-  s.version      = "0.0.2"
+  s.version      = "0.0.2.1"
   s.summary      = "工具类(希望网友fork之后推送新的功能过来合并)"
 
 
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author             = { "15038777234" => "君赏" }
   s.platform     = :ios, "6.0"
-  s.source       = { :git => "https://github.com/15038777234/ZHTools.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/15038777234/ZHTools.git", :tag => "0.0.2.1" }
   s.source_files  = "ZHTools", "ZHTools/**/*.{h,m}"
   s.requires_arc = true
 end

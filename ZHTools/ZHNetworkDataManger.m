@@ -87,16 +87,8 @@ typedef void(^ZHNSTimerComplete)(void);
         if ([view isKindOfClass:NSClassFromString(ZHNSStringUIStatusBarDataNetworkItemView)]) {
             isFindDataNetworkItemView=YES;
             int dataType=[[view valueForKeyPath:ZHNSStringDataNetworkType]intValue];
-            if (_isFirst) {
-                _dataType=dataType;
-                [self TestNetworkWithType:dataType];
-                _isFirst=NO;
-            }else if (dataType!=_dataType){
-                _dataType=dataType;
-                [self TestNetworkWithType:dataType];
-            }else{
-                _checkNetworkSuccess=YES;
-            }
+            _dataType=dataType;
+            [self TestNetworkWithType:dataType];
             
         }
     }
